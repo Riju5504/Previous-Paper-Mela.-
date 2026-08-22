@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Semester | Previous Paper Mela</title>
+
+    <link
+        rel="icon"
+        href="assets/icons/logo.svg"
+        type="image/svg+xml"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body class="semester-page">
+
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="dashboard.html"
+                class="brand"
+            >
+
+                <img
+                    src="assets/icons/logo.svg"
+                    alt=""
+                    class="brand-logo"
+                >
+
+                <div class="brand-copy">
+
+                    <div class="brand-title">
+                        Previous Paper Mela
+                    </div>
+
+                    <div class="brand-subtitle">
+                        Jiwaji University · MCA
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <div class="header-actions">
+
+                <div
+                    class="user-chip"
+                    id="userChip"
+                >
+                    Welcome
+                </div>
+
+                <button
+                    class="logout-button"
+                    id="logoutBtn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE -->
+
+    <main>
+
+        <section class="semester-hero">
+
+            <div class="section-container">
+
+                <a
+                    href="dashboard.html"
+                    class="back-link"
+                >
+                    ← Back to Dashboard
+                </a>
+
+                <div class="semester-kicker">
+                    MCA · JIWAJI UNIVERSITY
+                </div>
+
+                <h1 id="semesterTitle">
+                    Semester 1
+                </h1>
+
+                <p>
+                    Download previous-year question papers
+                    for your preparation and revision.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PAPERS -->
+
+        <section class="content-section">
+
+            <div class="section-container">
+
+                <div class="papers-heading">
+
+                    <div>
+
+                        <div class="section-kicker">
+                            QUESTION PAPER ARCHIVE
+                        </div>
+
+                        <h2>
+                            Available Papers
+                        </h2>
+
+                    </div>
+
+                    <div
+                        class="paper-count"
+                        id="paperCount"
+                    >
+                        0 Papers
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="papers-list"
+                    id="papersList"
+                >
+                </div>
+
+
+                <div
+                    class="empty-state hidden"
+                    id="emptyState"
+                >
+
+                    <div class="empty-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        No papers available yet
+                    </h3>
+
+                    <p>
+                        Papers for this semester will be added
+                        to the archive soon.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="section-container">
+
+            <div class="footer-bottom">
+
+                <span>
+                    Developed by
+                    <strong>
+                        Subhagata Sinha
+                    </strong>
+                    (Full Stack Developer)
+                </span>
+
+                <span>
+                    Previous Paper Mela © 2026
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/semester.js"></script>
+
+</body>
+
+</html>

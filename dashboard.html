@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | Previous Paper Mela</title>
+
+    <link
+        rel="icon"
+        href="assets/icons/logo.png"
+        type="image/png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <!-- Apply saved theme before the page appears -->
+    <script>
+        (function () {
+
+            const savedTheme =
+                localStorage.getItem("ppmTheme");
+
+            if (savedTheme === "dark") {
+
+                document.documentElement.classList.add("dark-theme");
+
+            }
+
+        })();
+    </script>
+
+</head>
+
+
+<body class="dashboard-page">
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="dashboard.html"
+                class="brand"
+            >
+
+                <img
+                    src="assets/icons/logo.png"
+                    alt="Previous Paper Mela"
+                    class="brand-logo"
+                >
+
+                <div class="brand-copy">
+
+                    <div class="brand-title">
+                        Previous Paper Mela
+                    </div>
+
+                    <div class="brand-subtitle">
+                        Jiwaji University · MCA
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a
+                    href="dashboard.html"
+                    class="active"
+                >
+                    Dashboard
+                </a>
+
+                <a href="#semesters">
+                    Semesters
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <div
+                    class="user-chip"
+                    id="userChip"
+                >
+                    Welcome
+                </div>
+
+                <button
+                    type="button"
+                    class="theme-button"
+                    id="themeToggle"
+                    aria-label="Toggle theme"
+                >
+                    ◐
+                </button>
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutBtn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero-section">
+
+            <div class="hero-glow hero-glow-one"></div>
+
+            <div class="hero-glow hero-glow-two"></div>
+
+            <div class="hero-inner">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+
+                        <span></span>
+
+                        MCA QUESTION PAPER ARCHIVE
+
+                    </div>
+
+
+                    <h1>
+
+                        Previous Paper
+
+                        <span>
+                            Mela
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+                        Your organized collection of MCA previous-year
+                        question papers from Jiwaji University.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#semesters"
+                            class="hero-primary-btn"
+                        >
+                            Explore Papers
+
+                            <span>
+                                ↓
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="contact.html"
+                            class="hero-secondary-btn"
+                        >
+                            Contact Developer
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="archive-card">
+
+                        <div class="archive-top">
+
+                            <span class="archive-dot"></span>
+
+                            <span>
+                                MCA ARCHIVE
+                            </span>
+
+                            <span class="archive-status">
+                                ● LIVE
+                            </span>
+
+                        </div>
+
+
+                        <div class="archive-icon">
+                            📚
+                        </div>
+
+
+                        <h3>
+                            Previous-Year Papers
+                        </h3>
+
+
+                        <p>
+                            Organized semester-wise for
+                            quick access and preparation.
+                        </p>
+
+
+                        <div class="archive-line"></div>
+
+
+                        <div class="archive-footer">
+
+                            <span>
+                                Sem 01
+                            </span>
+
+                            <span>
+                                Sem 02
+                            </span>
+
+                            <span>
+                                Sem 03
+                            </span>
+
+                            <span>
+                                Sem 04
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEMESTERS -->
+
+        <section
+            class="content-section"
+            id="semesters"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <div class="section-kicker">
+                            MCA · JIWAJI UNIVERSITY
+                        </div>
+
+
+                        <h2>
+                            Browse by Semester
+                        </h2>
+
+
+                        <p>
+                            Select your semester to find previous-year
+                            question papers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="semester-grid">
+
+                    <a
+                        href="semester.html?sem=1"
+                        class="semester-card semester-one"
+                    >
+
+                        <div class="card-number">
+                            01
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <div class="card-tag">
+                                MCA · SEMESTER
+                            </div>
+
+
+                            <h3>
+                                Semester 1
+                            </h3>
+
+
+                            <p>
+                                Previous-year question papers
+                                for Semester 1.
+                            </p>
+
+
+                            <span class="card-link">
+
+                                Browse Papers
+
+                                <span>
+                                    →
+                                </span>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="semester.html?sem=2"
+                        class="semester-card semester-two"
+                    >
+
+                        <div class="card-number">
+                            02
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <div class="card-tag">
+                                MCA · SEMESTER
+                            </div>
+
+
+                            <h3>
+                                Semester 2
+                            </h3>
+
+
+                            <p>
+                                Previous-year question papers
+                                for Semester 2.
+                            </p>
+
+
+                            <span class="card-link">
+
+                                Browse Papers
+
+                                <span>
+                                    →
+                                </span>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="semester.html?sem=3"
+                        class="semester-card semester-three"
+                    >
+
+                        <div class="card-number">
+                            03
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <div class="card-tag">
+                                MCA · SEMESTER
+                            </div>
+
+
+                            <h3>
+                                Semester 3
+                            </h3>
+
+
+                            <p>
+                                Previous-year question papers
+                                for Semester 3.
+                            </p>
+
+
+                            <span class="card-link">
+
+                                Browse Papers
+
+                                <span>
+                                    →
+                                </span>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="semester.html?sem=4"
+                        class="semester-card semester-four"
+                    >
+
+                        <div class="card-number">
+                            04
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <div class="card-tag">
+                                MCA · SEMESTER
+                            </div>
+
+
+                            <h3>
+                                Semester 4
+                            </h3>
+
+
+                            <p>
+                                Previous-year question papers
+                                for Semester 4.
+                            </p>
+
+
+                            <span class="card-link">
+
+                                Browse Papers
+
+                                <span>
+                                    →
+                                </span>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section class="about-strip">
+
+            <div class="section-container">
+
+                <div class="about-grid">
+
+                    <div class="about-avatar">
+
+                        <img
+                            src="assets/images/profile.jpg"
+                            alt="Subhagata Sinha"
+                        >
+
+                    </div>
+
+
+                    <div class="about-content">
+
+                        <div class="section-kicker">
+                            ABOUT THE DEVELOPER
+                        </div>
+
+
+                        <h2>
+                            Built with a purpose.
+                        </h2>
+
+
+                        <p>
+                            Previous Paper Mela is a student-focused project
+                            created to make MCA previous-year question papers
+                            easier to access, organize and use for academic
+                            preparation.
+                        </p>
+
+
+                        <p>
+
+                            Developed by
+
+                            <strong>
+                                Subhagata Sinha
+                            </strong>,
+
+                            a Full Stack Developer passionate about building
+                            practical, modern and user-friendly software
+                            solutions.
+
+                        </p>
+
+
+                        <a
+                            href="contact.html"
+                            class="about-button"
+                        >
+
+                            About & Contact
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EDUCATIONAL NOTE -->
+
+        <section class="notice-section">
+
+            <div class="section-container">
+
+                <div class="notice-card">
+
+                    <div class="notice-icon">
+                        🎓
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Study Smart. Prepare Seriously.
+                        </h3>
+
+
+                        <p>
+                            Previous-year papers are useful for understanding
+                            question patterns and practising. They are not a
+                            guarantee of upcoming examination questions.
+                            Always prepare according to your complete syllabus.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="section-container">
+
+            <div class="footer-main">
+
+                <div>
+
+                    <div class="footer-brand">
+                        Previous Paper Mela
+                    </div>
+
+
+                    <p>
+                        Jiwaji University · MCA
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="admin.html">
+                        Admin
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+
+                    Developed by
+
+                    <strong>
+                        Subhagata Sinha
+                    </strong>
+
+                    (Full Stack Developer)
+
+                </span>
+
+
+                <span>
+                    Previous Paper Mela © 2026
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

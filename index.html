@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Previous Paper Mela | Jiwaji University MCA</title>
+
+    <link
+        rel="icon"
+        href="assets/icons/logo.png"
+        type="image/png"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="welcome-page">
+
+    <div class="welcome-overlay" id="welcomeOverlay">
+
+        <div class="welcome-card">
+
+            <!-- COMPACT HEADER: LOGO LEFT / DATE + TIME RIGHT -->
+            <div class="welcome-header">
+
+                <div class="welcome-header-logo">
+                    <img
+                        src="assets/icons/logo.png"
+                        alt="Previous Paper Mela"
+                    >
+                </div>
+
+                <div class="welcome-header-tools">
+
+                    <div
+                        class="welcome-live-info"
+                        aria-label="Live date and time"
+                    >
+                        <span id="liveDate">Loading date...</span>
+
+                        <span
+                            id="liveTime"
+                            class="welcome-live-time"
+                        >
+                            Loading time...
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAIN WELCOME CONTENT -->
+            <div class="welcome-main-content">
+
+                <div class="brand-mark">
+                    <img
+                        src="assets/icons/logo.png"
+                        alt="Previous Paper Mela"
+                    >
+                </div>
+
+                <div class="welcome-label">
+                    MCA QUESTION PAPER ARCHIVE
+                </div>
+
+                <h1>
+                    Welcome to Previous Paper Mela
+                </h1>
+
+                <p class="developer-line">
+                    Developed by
+                    <strong>Subhagata Sinha</strong>
+                    <span>(Full Stack Developer)</span>
+                </p>
+
+                <div class="welcome-divider"></div>
+
+                <div class="welcome-content">
+
+                    <p>
+                        This platform has been created to help MCA students and
+                        juniors review previous-year question papers, understand
+                        examination patterns, and prepare more effectively.
+                    </p>
+
+                    <p>
+                        The papers available on this website are provided only
+                        for <strong>educational reference, revision, practice
+                        and preparation</strong>.
+                    </p>
+
+                    <p>
+                        Previous-year question papers do not guarantee that the
+                        same questions will appear in your upcoming examination.
+                        They should be used as a study aid and not as a replacement
+                        for studying the complete syllabus.
+                    </p>
+
+                    <p>
+                        Students are encouraged to prepare sincerely, understand
+                        the concepts, practise regularly and use these papers to
+                        become familiar with question patterns.
+                    </p>
+
+                    <p>
+                        You may download the available papers for your personal
+                        study, revision and printing purposes.
+                    </p>
+
+                    <div class="best-wishes">
+                        <strong>
+                            Prepare well. Work hard. Give your best.
+                        </strong>
+                        <br>
+                        All the best for your examinations! 🎓
+                    </div>
+
+                </div>
+
+
+                <div class="form-section">
+
+                    <label for="userName">
+                        Enter Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="userName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        maxlength="80"
+                    >
+
+                    <p
+                        class="form-error"
+                        id="nameError"
+                    ></p>
+
+                    <label class="agreement-row">
+
+                        <input
+                            type="checkbox"
+                            id="agreeCheckbox"
+                        >
+
+                        <span>
+                            I have read and understood the above declaration
+                            and agree to use this website and its papers for
+                            educational purposes only.
+                        </span>
+
+                    </label>
+
+                    <p
+                        class="form-error"
+                        id="agreementError"
+                    ></p>
+
+                    <button
+                        type="button"
+                        id="continueBtn"
+                        class="primary-btn"
+                    >
+                        Continue
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+                <div class="privacy-note">
+                    Your name and agreement status are recorded for basic
+                    website usage purposes.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
