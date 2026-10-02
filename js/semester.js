@@ -117,66 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
     /*
      * Papers
      *
-     * Later we can replace this static
-     * list with database/API data.
+     * Papers are now loaded from
+     * the Render backend / MongoDB API.
      */
 
-    const papers = {
-
-        "1": [
-
-            {
-                name: "Mathematics",
-                year: "2024-25",
-                file: "papers/semester-1/mathematics-2024-25.pdf"
-            },
-
-            {
-                name: "Computer Fundamentals",
-                year: "2024-25",
-                file: "papers/semester-1/computer-fundamentals-2024-25.pdf"
-            }
-
-        ],
-
-
-        "2": [
-
-            {
-                name: "Database Management System",
-                year: "2024-25",
-                file: "papers/semester-2/dbms-2024-25.pdf"
-            }
-
-        ],
-
-
-        "3": [
-
-            {
-                name: "Computer Networks",
-                year: "2024-25",
-                file: "papers/semester-3/computer-networks-2024-25.pdf"
-            }
-
-        ],
-
-
-        "4": [
-
-            {
-                name: "Software Engineering",
-                year: "2024-25",
-                file: "papers/semester-4/software-engineering-2024-25.pdf"
-            }
-
-        ]
-
-    };
-
-
-    const currentPapers =
-        papers[semester] || [];
+    const API_BASE_URL =
+        "https://previous-paper-mela.onrender.com";
 
 
     const papersList =
@@ -197,89 +143,204 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-    paperCount.textContent =
-        `${currentPapers.length} ${
-            currentPapers.length === 1
-                ? "Paper"
-                : "Papers"
-        }`;
-
-
     /*
-     * No papers
+     * Show loading state
      */
 
-    if (currentPapers.length === 0) {
+    if (paperCount) {
 
-        emptyState.classList.remove(
-            "hidden"
-        );
+        paperCount.textContent =
+            "Loading...";
 
-        return;
     }
 
 
     /*
-     * Generate paper cards
+     * Load papers from backend
      */
 
-    currentPapers.forEach(
-        (paper, index) => {
+    fetch(
+        `${API_BASE_URL}/api/papers/semester/${semester}`
+    )
+        .then(response => {
 
-            const article =
-                document.createElement(
-                    "article"
+            if (!response.ok) {
+
+                throw new Error(
+                    `Server returned ${response.status}`
                 );
 
+            }
 
-            article.className =
-                "paper-card";
+            return response.json();
 
+        })
+        .then(data => {
 
-            article.innerHTML = `
-
-                <div class="paper-index">
-                    ${String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div class="paper-icon">
-                    PDF
-                </div>
-
-                <div class="paper-details">
-
-                    <div class="paper-label">
-                        QUESTION PAPER
-                    </div>
-
-                    <h3>
-                        ${paper.name}
-                    </h3>
-
-                    <p>
-                        Academic Year:
-                        <strong>${paper.year}</strong>
-                    </p>
-
-                </div>
-
-                <a
-                    href="${paper.file}"
-                    class="download-button"
-                    download
-                >
-                    Download
-                    <span>↓</span>
-                </a>
-
-            `;
+            const currentPapers =
+                data.papers || [];
 
 
-            papersList.appendChild(
-                article
+            /*
+             * Update paper count
+             */
+
+            if (paperCount) {
+
+                paperCount.textContent =
+                    `${currentPapers.length} ${
+                        currentPapers.length === 1
+                            ? "Paper"
+                            : "Papers"
+                    }`;
+
+            }
+
+
+            /*
+             * Clear existing papers
+             */
+
+            if (papersList) {
+
+                papersList.innerHTML = "";
+
+            }
+
+
+            /*
+             * No papers
+             */
+
+            if (currentPapers.length === 0) {
+
+                if (emptyState) {
+
+                    emptyState.classList.remove(
+                        "hidden"
+                    );
+
+                }
+
+                return;
+            }
+
+
+            /*
+             * Hide empty state
+             */
+
+            if (emptyState) {
+
+                emptyState.classList.add(
+                    "hidden"
+                );
+
+            }
+
+
+            /*
+             * Generate paper cards
+             */
+
+            currentPapers.forEach(
+                (paper, index) => {
+
+                    const article =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    article.className =
+                        "paper-card";
+
+
+                    /*
+                     * Backend returns:
+                     *
+                     * filePath:
+                     * /api/papers/file/:fileId
+                     */
+
+                    const fileUrl =
+                        `${API_BASE_URL}${paper.filePath}`;
+
+
+                    article.innerHTML = `
+
+                        <div class="paper-index">
+                            ${String(index + 1).padStart(2, "0")}
+                        </div>
+
+                        <div class="paper-icon">
+                            PDF
+                        </div>
+
+                        <div class="paper-details">
+
+                            <div class="paper-label">
+                                QUESTION PAPER
+                            </div>
+
+                            <h3>
+                                ${paper.subject || paper.fileName}
+                            </h3>
+
+                            <p>
+                                Academic Year:
+                                <strong>${paper.year}</strong>
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="${fileUrl}"
+                            class="download-button"
+                            target="_blank"
+                        >
+                            Download
+                            <span>↓</span>
+                        </a>
+
+                    `;
+
+
+                    if (papersList) {
+
+                        papersList.appendChild(
+                            article
+                        );
+
+                    }
+
+                }
             );
 
-        }
-    );
+        })
+        .catch(error => {
+
+            console.error(
+                "Error loading papers:",
+                error
+            );
+
+
+            if (paperCount) {
+
+                paperCount.textContent =
+                    "Unable to load papers";
+
+            }
+
+            if (emptyState) {
+
+                emptyState.classList.remove(
+                    "hidden"
+                );
+
+            }
+
+        });
 
 });
